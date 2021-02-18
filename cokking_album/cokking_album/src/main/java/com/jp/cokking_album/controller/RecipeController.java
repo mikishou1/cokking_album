@@ -16,8 +16,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class RecipeController {
 
     /**
+     * トップページ（仮実装）.
+     * 別Controllerへ実装予定.
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String showWelcome(ModelMap model) {
+        String message = "ようこそレシピレジストリへ";
+        model.put("message", message);
+        return "welcome";
+    }
+
+    /**
      * レシピ一覧表示
-     * 初期表示として仮実装
+     * 仮実装.
      */
     @RequestMapping(value = "/list-recipes", method = RequestMethod.GET)
     public String showRecipes(ModelMap model) {
