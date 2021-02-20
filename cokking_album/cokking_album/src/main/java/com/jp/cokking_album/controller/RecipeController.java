@@ -12,8 +12,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
  *
  */
 @Controller
-@RequestMapping(value="/")
 public class RecipeController {
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String getLogin(ModelMap model) {
+        return "login";
+    }
 
     /**
      * トップページ（仮実装）.
@@ -21,7 +25,7 @@ public class RecipeController {
      * @param model
      * @return
      */
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/welcome", method = RequestMethod.GET)
     public String showWelcome(ModelMap model) {
         String message = "ようこそレシピレジストリへ";
         model.put("message", message);

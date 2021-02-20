@@ -15,6 +15,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth)
             throws Exception {
@@ -25,9 +27,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.antMatcher("/").httpBasic()
+        http.authorizeRequests()
+        .antMatchers("/", "/welcome").permitAll()
+            .anyRequest().authenticated()
             .and()
-            .authorizeRequests().anyRequest().authenticated();
+            .formLogin().loginPage("/login")
+            .failureUrl("/welcome").defaultSuccessUrl("/list-recipes");
     }
 
 }
