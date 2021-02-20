@@ -3,14 +3,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
   <head>
-    <title>レシピ一覧</title>
+    <title>ユーザーレシピ一覧</title>
  <!--     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css"
           href="default.css" /> -->
   </head>
 
   <body>
-
+    <p>ユーザーのレシピ一覧です。</p>
     <tr th:each="recipe : ${recipes}">
       <div th:text="${recipe}"></div>
     </tr>

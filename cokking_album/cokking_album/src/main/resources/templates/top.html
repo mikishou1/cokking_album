@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Top Page</title>
+</head>
+<body>
+<a th:href="@{/user/{username}/user-recipes(username=${name})}">専用リスト</a>
+    <form th:action="@{/logout}" method="post">
+      <button type="submit">ログアウト</button>
+	</form>
+</body>
+</html>

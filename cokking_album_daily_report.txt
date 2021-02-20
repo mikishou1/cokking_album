@@ -4,3 +4,4 @@
 2/17 spring security study 1:spring securityを導入。@security導入後、自動で/loginへ遷移しなくなった。ユーザの保存に難
 2/18 spring security study 2:httpBasic導入。IllegalArgumentExceptionが出たため、インメモリpasswordに{noop}をつけた
 2/20 spring security study 3:login.html作成。自作loginページでログイン処理
+2/20 spring security study 4:logout実装。パラメータを含めたurlのコントローラ実装/{username}/xxx

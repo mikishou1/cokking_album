@@ -28,11 +28,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-        .antMatchers("/", "/welcome").permitAll()
+        .antMatchers("/welcome", "/login").permitAll()
             .anyRequest().authenticated()
             .and()
             .formLogin().loginPage("/login")
-            .failureUrl("/welcome").defaultSuccessUrl("/list-recipes");
+            .failureUrl("/welcome").defaultSuccessUrl("/list-recipes")
+            .and()
+            .logout()
+            .logoutUrl("/logout")
+            .deleteCookies("remember-me")
+            .logoutSuccessUrl("/login");
     }
 
 }
