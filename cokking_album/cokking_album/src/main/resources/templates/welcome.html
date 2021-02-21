@@ -7,5 +7,14 @@
   <tr>
     <div th:text="${message}"></div>
   </tr>
+  	<form th:action="@{/users/regist}" method="post" th:object="${user}">
+		<input type="number" name="user_id" th:required="required" />
+		<br>
+		<input type="text" name="name" th:required="required" />
+		<br>
+		<input type="number" name="role" th:required="required" />
+		<br>
+		<button type="submit">登録</button>
+	</form>
 </body>
 </html>

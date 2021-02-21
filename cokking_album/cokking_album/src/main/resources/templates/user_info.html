@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>ユーザ情報</title>
+ <!--     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css"
+          href="default.css" /> -->
+  </head>
+
+  <body>
+
+    <tr th:each="user: ${user_result}">
+      <div th:text="${user.name}"></div>
+      <div th:text="${user.role}"></div>
+    </tr>
+    <form th:action="@{/logout}" method="post">
+      <button type="submit">ログアウト</button>
+	</form>
+
+  </body>
+
+</html>
