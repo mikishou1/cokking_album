@@ -6,6 +6,10 @@
 </head>
 <body>
 <a th:href="@{/user/{username}/user-recipes(username=${name})}">専用リスト</a>
+    <form th:action="@{/users/user_info}" method="post">
+      <input type="text" name="user_id" />
+      <button type="submit">ユーザ検索</button>
+    </form>
     <form th:action="@{/logout}" method="post">
       <button type="submit">ログアウト</button>
 	</form>

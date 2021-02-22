@@ -8,4 +8,9 @@
       #{role, jdbcType=INTEGER}
     )
   </insert>
+
+  <select id="findById" parameterType="int" resultType="com.jp.cokking_album.dto.Users">
+    SELECT * FROM USERS
+      WHERE user_id = #{user_id}
+  </select>
 </mapper>

@@ -22,4 +22,9 @@ public class UsersServiceImpl implements UsersService {
         return users;
     }
 
+    @Override
+    public Users findById(int user_id) {
+        return mapper.findById(user_id);
+    }
+
 }

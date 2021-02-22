@@ -7,3 +7,4 @@
 2/20 spring security study 4:logout実装。パラメータを含めたurlのコントローラ実装/{username}/xxx
 2/21 mybatis study 1:PostgreSQLと接続。usersテーブルへのinsert実装。
                      form th:objectとコントローラ引数内の@ModelAttribute BeanクラスでInjectionできる
+2/22 mybatis study 2:select実装。parameterTypeとresultTypeを使用。DB名のカラム名と合致で勝手にインスタンスへ代入

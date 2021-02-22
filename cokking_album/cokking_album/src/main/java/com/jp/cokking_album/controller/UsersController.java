@@ -7,6 +7,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.jp.cokking_album.dto.Users;
 import com.jp.cokking_album.service.UsersService;
@@ -28,6 +29,13 @@ public class UsersController {
             throw new RuntimeException((Throwable) errors);
         }
         model.put("user_result", usersService.register(users));
+        return "user_info";
+    }
+
+    @RequestMapping(value = "/user_info", method = RequestMethod.POST)
+    public String userInfo(@RequestParam int user_id, ModelMap model) {
+
+        model.put("user_result", usersService.findById(user_id));
         return "user_info";
     }
 
