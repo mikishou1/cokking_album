@@ -11,3 +11,7 @@
 2/23 mybatis & security study 1:SpringSecurity標準のUserDetails,UserDetailsServiceを実装したクラスを作成。
                                 SecurityConfigのconfigureのauthメソッドでUserDetailsService（自作）をDIして認証処理を差替
                                 UserDetailsのパスワードもハッシュ化しない場合は{noop}が必要で沼。
+
+2/23 mybatis & security study 2:ユーザ登録時にnew BCryptPasswordEncoder().encodeでパスワードハッシュ化。
+                                mapper.xmlでuseGeneratedKeys=true,keyProperty="キーの名前"で自動採番。
+                                Spring Securityのauth.userDetailsService.passwordEncoder()によりハッシュで認証

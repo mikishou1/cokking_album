@@ -1,6 +1,7 @@
 package com.jp.cokking_album.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.jp.cokking_album.dto.Users;
@@ -19,7 +20,7 @@ public class UsersServiceImpl implements UsersService {
 
     @Override
     public Users register(Users users) {
-
+        users.setPassword(new BCryptPasswordEncoder().encode(users.getPassword()));
         mapper.insert(users);
         return users;
     }

@@ -25,7 +25,7 @@ public class MyUserDetails implements UserDetails {
     @Override
     public String getPassword() {
         // TODO 自動生成されたメソッド・スタブ
-        return "{noop}dummy";
+        return this.user.getPassword();
     }
 
     @Override

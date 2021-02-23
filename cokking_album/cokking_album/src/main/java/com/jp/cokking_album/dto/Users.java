@@ -7,11 +7,13 @@ import lombok.Data;
 @Data
 public class Users {
 
-    @NotNull
     private int user_id;
 
     @NotNull
     private String name;
+
+    @NotNull
+    private String password;
 
     @NotNull
     private int role;

@@ -20,7 +20,6 @@ public class MyUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Users user = usersMapper.findByName(username);
         if(user != null) {
-            System.out.print(user.getName() + "でログインしようとしている");
             return new MyUserDetails(user);
         }
         throw new UsernameNotFoundException("not found :" + username);
