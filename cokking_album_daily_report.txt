@@ -8,3 +8,6 @@
 2/21 mybatis study 1:PostgreSQLと接続。usersテーブルへのinsert実装。
                      form th:objectとコントローラ引数内の@ModelAttribute BeanクラスでInjectionできる
 2/22 mybatis study 2:select実装。parameterTypeとresultTypeを使用。DB名のカラム名と合致で勝手にインスタンスへ代入
+2/23 mybatis & security study 1:SpringSecurity標準のUserDetails,UserDetailsServiceを実装したクラスを作成。
+                                SecurityConfigのconfigureのauthメソッドでUserDetailsService（自作）をDIして認証処理を差替
+                                UserDetailsのパスワードもハッシュ化しない場合は{noop}が必要で沼。

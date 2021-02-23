@@ -21,4 +21,11 @@ public interface UsersMapper {
      */
     Users findById(int user_id);
 
+    /**
+     * nameでのselect
+     * @param name
+     * @return
+     */
+    Users findByName(String name);
+
 }

@@ -1,10 +1,13 @@
 package com.jp.cokking_album.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+import com.jp.cokking_album.service.impl.MyUserDetailsService;
 
 /**
  * SpringSecurity認証設定
@@ -15,14 +18,13 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-
+    @Autowired
+    private MyUserDetailsService userDetailsService;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth)
             throws Exception {
-        auth.inMemoryAuthentication()
-            .withUser("user1").password("{noop}dummyuser")
-            .roles("USER", "ADMIN");
+        auth.userDetailsService(userDetailsService);
     }
 
     @Override

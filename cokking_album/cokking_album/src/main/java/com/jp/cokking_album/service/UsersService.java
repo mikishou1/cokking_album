@@ -18,4 +18,11 @@ public interface UsersService {
      */
     Users findById(int user_id);
 
+    /**
+     * ユーザ検索(By name)
+     * @param name
+     * @return
+     */
+    Users findByName(String name);
+
 }

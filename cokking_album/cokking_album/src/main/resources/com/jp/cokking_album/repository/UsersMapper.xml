@@ -13,4 +13,9 @@
     SELECT * FROM USERS
       WHERE user_id = #{user_id}
   </select>
+
+  <select id="findByName" parameterType="String" resultType="com.jp.cokking_album.dto.Users">
+    SELECT * FROM USERS
+      WHERE name = #{name}
+  </select>
 </mapper>

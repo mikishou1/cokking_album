@@ -1,5 +1,6 @@
 package com.jp.cokking_album.service.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jp.cokking_album.dto.Users;
@@ -9,6 +10,7 @@ import com.jp.cokking_album.service.UsersService;
 @Service
 public class UsersServiceImpl implements UsersService {
 
+    @Autowired
     private UsersMapper mapper;
 
     public UsersServiceImpl(UsersMapper mapper) {
@@ -17,7 +19,7 @@ public class UsersServiceImpl implements UsersService {
 
     @Override
     public Users register(Users users) {
-        // TODO 自動生成されたメソッド・スタブ
+
         mapper.insert(users);
         return users;
     }
@@ -25,6 +27,11 @@ public class UsersServiceImpl implements UsersService {
     @Override
     public Users findById(int user_id) {
         return mapper.findById(user_id);
+    }
+
+    @Override
+    public Users findByName(String name) {
+        return mapper.findByName(name);
     }
 
 }
